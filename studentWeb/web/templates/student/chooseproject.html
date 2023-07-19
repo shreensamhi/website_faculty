@@ -1,0 +1,32 @@
+{% include 'base.html' %}
+{% load static%}
+{% block content %}
+
+<html >
+    <title>New Home Page </title>
+    <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+<body>
+    <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Please choose which project do you want </h1>
+    <p align="center" class="body-text">
+        <button style="padding: 15px 30px; border-radius: 30px 30px 30px 30px;"  onclick="myFunction()" >Human Resources</button>
+        <p id="button"></p>
+         <div><br></div>
+    </p>
+    <p align="center" class="body-text"> 
+        <button style="padding: 15px 30px; border-radius: 30px 30px 30px 30px;"><a href="homepage1">Student Affairs</a></button>
+        <div> <br></div>
+        </p>
+        
+   <p align="center" class="body-text"> 
+    <button style="padding: 15px 30px; border-radius: 30px 30px 30px 30px;"  onclick="myFunction()">Higher Studies</button>
+    <p id="button"></p>
+   <div> <br> </div>
+   </p>
+   <p align="center" class="body-text"> 
+    <button style="padding: 15px 30px; border-radius: 30px 30px 30px 30px;"  onclick="myFunction()">Laboratory Tracking</button>
+    <p id="button"></p>
+    </p>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+{% endblock content %}

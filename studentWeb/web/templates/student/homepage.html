@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href=" {% static 'css/Styleme.css' %}">
+        <title>Home Page</title>
+        <meta name="description" content="" />
+    </head>
+<body class="intro">
+    
+    <h1 align="center" class="body-text">
+        Welcome, this is the login page
+    </h1>
+<br>
+<h4> Please first log in to start the registration process</h4>
+    <form method="POST" action="Login">
+      {% csrf_token %}
+        <div>
+          <label for="r">Username</label>
+          <input id="r" type="text" name = "username "required placeholder="your username" autofocus>
+        </div>
+        <br>
+        <div>
+          <label for="q">Password</label>
+          <input id= "q" type="password" name ="password" required placeholder="your password">
+        </div>
+        <br>
+          <input type ="submit"  value="login"> 
+      </form>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,70 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title>Status of Students</title>
+    </head>
+
+    <body class="intro">
+       
+        <h1><p align="center">Status of Students</p> </h1>
+    <p align="center"> <b>    Level: </b> 
+        <select name ="Level">
+            <option disabled selected> Choose Level </option>
+            <option> First Level </option>
+            <option> Second Level </option>
+            <option> Third Level </option>
+            <option> Fourth Level </option>
+        </select>
+        </p>
+        <br/><br/>
+        <p align="center"> <b>Department: </b> 
+            <select name ="Department">
+                <option disabled selected> Choose Department </option>
+                <option> General </option>
+                <option> Computer Science </option>
+                <option> Information System </option>
+                <option> Information Technology</option>
+                <option> Decision Support </option>
+                <option> Artificial intelligence </option>
+            </select>
+            </p>
+            <br/><br/>
+            <table border="1" align="center" >
+                <TR>
+                    <TH align="center" width="50" >No. </TH>
+                    <TH align="center" width="150">ID</TH>
+                    <TH align="center" width="250">Name</TH>
+                    <TH align="center" width="150">Status</TH>
+                </TR>
+                {% for s in stu %}
+                
+                <TR>
+                    <TD align="center" >{{ forloop.counter }}</TD>
+                    <TD align="center" >{{s.studentname}}</TD>
+                    <TD align="center" >{{s.studentid}}</TD>
+                    <TD align="center" ><div style="display:inline-block;padding-right: 5px;" id={{ forloop.counter }} >{{s.status}}</div><button onclick="changeStatus()">Change</button></TD>
+                </TR>
+                {% endfor %}
+
+            </table>
+            <script>
+                function changeStatus() 
+                {
+                 if(document.getElementById("s1").innerHTML=="Active") 
+                 {
+                     document.getElementById("s1").innerHTML = "Inactive";
+                
+                 }
+                 else
+                 {
+                    document.getElementById("s1").innerHTML="Active"
+                 }
+                }
+                </script>
+    </body>
+</html>
+{% endblock content %}

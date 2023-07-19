@@ -1,0 +1,87 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8"/><!--this meta for writting with arabic or english-->
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title> Edit Student Data  </title>
+        <meta name=" description" content ="this page edits student data" />
+    </head>
+    <body  class="intro">
+        <script src="{% static 'js/main.js' %}"></script>
+        
+       <h1 align="center"> <b>Sign Up</b> </h1>
+       <p>Enter your data:</p>
+       <form method="POST" ondrop="return checkForm">
+           {% csrf_token %}
+           <div>
+               <label for="s">Student Name</label>
+               <input id="s" type ="text" name = "studentname" required placeholder="Enter your name">
+           </div>
+           <br>
+           <div>
+            <label for="i">ID</label>
+            <input id="i" type ="number" name = "studentid" required placeholder="Enter your ID" min="2020" max="20201999">
+        </div>
+        <br>
+        <div>
+            <label for="b">Birthday</label>
+            <input id="b" type ="date" name = "birthday" required placeholder="Enter your birthday">
+        </div>
+        <br>
+        <div>
+            <label for="g">GPA</label>
+            <input id="g" type ="number" name = "gpa" required placeholder="Enter your gpa">
+        </div>
+        <br>
+        <div>
+            <label for="l">Level</label>
+            <input id="l" type ="text" name = "level" required placeholder="Enter your level">
+        </div>
+        <br>
+        <div>
+            <p>Gender</p>
+            <div>
+                <input id="f" type ="radio" name="gender" value="female">
+                <label for="f">Female</label>
+            </div>
+            <div>
+                <input id="m" type ="radio" name="gender" value="male">
+                <label for="m">Male</label>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="E">Email</label>
+            <input ID="E" type ="email" name = "email" required placeholder="Enter your email">
+        </div>
+        <br>
+        <div>
+            <label for="n">Phone Number</label>
+            <input id="n" type ="tel" name = "phonenumber" required placeholder="Enter your phone number">
+        </div>
+        <br>
+        <div>
+            <label for="t">Department</label>
+            <input id="t" type ="text" name = "department" required placeholder="Enter your department">
+        </div>
+        <br>
+        <div>
+            <p>Status</p>
+            <div>
+                <input id="a" type ="radio" name="status" value="active">
+                <label for="a">Active</label>
+            </div>
+            <div>
+                <input id="in" type ="radio" name="status" value="inactive">
+                <label for="in">Inactive</label>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Save">
+       </form>
+    </body>
+</html>
+{% endblock content %}

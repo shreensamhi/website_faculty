@@ -1,0 +1,89 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title>Student information</title>
+    </head>
+    <body  class="intro">
+        <div class="header"> 
+            <a href="homepage">Home</a>
+            <a class="active" href="page1">Student Information</a>
+            <a href="page2">Edit Student Data</a>
+            <a href="page3">Search</a>
+            <a href="page4">Status of Students</a>
+            <a href="page5">About FCI</a>
+        </div>
+        <h1>Update Student</h1>
+
+        <form action="updaterecord/{{ mystudent.id }}" method="post">
+        {% csrf_token %}
+        <label for="s">Student Name</label>
+               <input id="s" type ="text" name = "studentname" required placeholder="Enter your name" value="{{mystudent.studentname}}">
+           </div>
+           <br>
+           <div>
+            <label for="i">ID</label>
+            <input id="i" type ="number" name = "studentid" required placeholder="Enter your ID" min="2020" max="20201999" value="{{mystudent.studentid}}">
+        </div>
+        <br>
+        <div>
+            <label for="b">Birthday</label>
+            <input id="b" type ="date" name = "birthday" required placeholder="Enter your birthday" value="{{mystudent.birthday}}">
+        </div>
+        <br>
+        <div>
+            <label for="g">GPA</label>
+            <input id="g" type ="number" name = "gpa" required placeholder="Enter your gpa" value="{{mystudent.gpa}}">
+        </div>
+        <br>
+        <div>
+            <label for="l">Level</label>
+            <input id="l" type ="text" name = "level" required placeholder="Enter your level" value="{{mystudent.level}}">
+        </div>
+        <br>
+        <div>
+            <p>Gender</p>
+            <div>
+                <input id="f" type ="radio" name="gender" value="{{mystudent.gender}}">
+                <label for="f">Female</label>
+            </div>
+            <div>
+                <input id="m" type ="radio" name="gender" value="{{mystudent.gender}}">
+                <label for="m">Male</label>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="E">Email</label>
+            <input ID="E" type ="email" name = "email" required placeholder="Enter your email" value="{{mystudent.email}}">
+        </div>
+        <br>
+        <div>
+            <label for="n">Phone Number</label>
+            <input id="n" type ="tel" name = "phonenumber" required placeholder="Enter your phone number" value="{{mystudent.phonenumber}}">
+        </div>
+        <br>
+        <div>
+            <label for="t">Department</label>
+            <input id="t" type ="text" name = "department" required placeholder="Enter your department" value="{{mystudent.department}}">
+        </div>
+        <br>
+        <div>
+            <p>Status</p>
+            <div>
+                <input id="a" type ="radio" name="status" value="{{mystudent.status}}">
+                <label for="a">Active</label>
+            </div>
+            <div>
+                <input id="in" type ="radio" name="status" value="{{mystudent.status}}">
+                <label for="in">Inactive</label>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% include 'base.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title>Active Students</title>
+    </head>
+    <body>
+        
+        <input type="text" id="search" onkeyup="myFunction()" placeholder="Search for Student Names..">
+        <ul id="unordered">
+            <li><a href="#" onclick="location.href='file:page3'">First Student</a></li>
+            <li><a href="#" onclick="location.href='file:page3'">Second Student</a></li>
+            <li><a href="#" onclick="location.href='file:page3'">Third Student</a></li>
+            <li><a href="#" onclick="location.href='file:page3'">Fourth Student</a></li> 
+            <li><a href="#" onclick="location.href='file:page3'">Fifth Student</a></li>
+            <li><a href="#" onclick="location.href='file:page3'">Sixth Student</a></li>
+            <li><a href="#" onclick="location.href='file:page3'">Seventh Student</a></li>
+        </ul>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
+{% endblock content%}

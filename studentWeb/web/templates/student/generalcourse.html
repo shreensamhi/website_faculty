@@ -1,0 +1,31 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <meta charset="UTF-8">
+        <title>General Courses</title>
+    </head>
+    <BODY class="courses">
+        <h2>General Courses</h2>
+        <ol>
+             <li>Creative Thinking</li>
+             <li> Decision and Game Theory</li>
+             <li> Discrete Mathematics</li>
+           	 <li>English</li>
+             <li> Fundamentals of Accounting</li>
+             <li> Mass Communication</li>
+             <li> Mathematics-1</li>
+             <li> Mathematics-2</li>
+             <li>Mathematics-3</li>
+     	     <li>Mathematics-4</li>
+             <li> Probability and Statistics-1</li>
+     	     <li>Probability and Statistics-2</li>
+             <li>Professional Ethics</li>
+             <li>Scientific & Technical Report Writing</li>
+        </ol>
+    </BODY>
+{% endblock content %}

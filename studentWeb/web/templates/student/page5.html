@@ -1,0 +1,36 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title>About FCI</title>
+    </head>
+    <body class="intro">
+        
+        <h2 align="center">About FCI</h2> 
+        <h3>FCI History</h3>
+        
+        <p>The faculty has been constructed on 1996 – 1997 ,
+            it accepts the graduated students from the final secondary stage that have been successfully passed both physics and mathematics subjects</p>
+        <p><h3>FCI Departments</h3></p>
+        <ol>
+            <li><a href="it" target="-blank">Information Technology (IT) department</a></li>
+            <li><a href="IS" target="-blank">Information System (IS) department</a></li>
+            <li><a href="cs" target="-blank">Computer Science (CS) department</a></li>
+            <li><a href="ds" target="-blank">Decision Support (DS) department</a></li>
+        </ol>
+        <p><h3>FCI courses</h3></p>
+        <ol>
+            <li><a href="generalcourse" target="-blank">General courses</a></li>
+            <li><a href="itcourse" target="-blank">Information Technology (IT) courses</a></li>
+            <li><a href="iscourse" target="-blank">Information System (IS) courses</a></li>
+            <li><a href="cscourse" target="-blank">Computer Science (CS) courses</a></li>
+            <li><a href="dscourse" target="-blank">Decision Support (DS) courses</a></li>
+        </ol>
+    </body>
+</html>
+{% endblock content%}

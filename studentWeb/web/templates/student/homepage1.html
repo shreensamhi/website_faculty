@@ -1,0 +1,23 @@
+{% include 'base.html' %}
+{% load static%}
+{% block content %}
+
+<html >
+    <title> Home Page Main </title>
+    <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+<body>
+    <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;"> Choose Login if you already exist or Signup if it's your first time enter  </h1>
+    <p align="center" class="body-text"> 
+        <button style="padding: 15px 30px; border-radius: 30px 30px 30px 30px;"><a href="page2">Sign Up</a></button>
+        <div> <br></div>
+        </p>
+        
+   <p align="center" class="body-text"> 
+    <button style="padding: 15px 30px; border-radius: 30px 30px 30px 30px;"> <a href="homepage">Log In</a> </button>
+    <p id="button"></p>
+   <div> <br> </div>
+   </p>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+{% endblock content %}

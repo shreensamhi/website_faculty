@@ -1,0 +1,31 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title>Student's Department Assignment Page</title>
+    </head>
+    <body class="intro">
+        
+        <h1 align="center">
+            Student's Department Assignment
+        </h1>
+        <p>Name: </p>
+        <p>ID: </p>
+        <label for="departments">Choose a Department:</label>
+        <select name="departments" id="departments">
+            <option disabled selected>Choose Department</option>
+            <option>Computer Science</option>
+            <option>Information System</option>
+            <option>Information Technology</option>
+            <option>Decision Support</option>
+            <option>Artificial intelligence</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+
+    </body>
+</html>
+{% endblock content %}

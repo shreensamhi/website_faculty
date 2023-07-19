@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Styleme.css' %}">
+        <title>Student information</title>
+    </head>
+    <body class="intro">
+        <script src="{% static 'js/main.js' %}"></script>
+        
+        <h1 align="center">Student Information</h1>
+        {%for x in student_info%}
+        <ul>
+                <li> Name:{{ x.studentname }}</li>
+                <li> ID:{{ x.studentid }}</li>
+                <li> Date of Birth:{{ x.birthday }}</li>
+                <li> GPA:{{ x.gpa }}</li>
+                <li> Gender:{{ x.gender }}</li>
+                <li> Level:{{ x.level }}</li>
+                <li> Status:{{ x.status }}</li>
+                <li> Department:{{ x.department }}</li>
+                <li> Email:{{ x.email }}</li>
+                <li> Mobile Number:{{x.phonenumber }}</li>
+            </ul>
+            <button onclick="showAlert()"><a href="delete/{{ x.id }}">Delete</a></button>
+            <br>
+            <h6>Update student</h6>
+            <button><a href="update/{{ x.id }}">{{x.id}}</a></button>
+            </br>
+        {% endfor %}
+    </body>
+</html>
+{% endblock content %}
